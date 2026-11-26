@@ -14,7 +14,7 @@
             text-align: center;
             background-image: radial-gradient(circle at 50% 0%, #2a0a1a 0%, #0a0a0a 60%);
         }
-        header { padding: 40px 20px; }
+        header { padding: 40px 20px; position: relative; }
         h1 {
             color: #ff007f;
             font-size: 3.5em;
@@ -24,6 +24,30 @@
             text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
         p.alt-yazi { color: #aaaaaa; font-size: 1.2em; }
+
+        /* Yetkili Ekip Yazısı */
+        .yetkili-ekip {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background-color: rgba(255, 0, 127, 0.1);
+            border: 1px solid #ff007f;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        /* Kategoriler */
+        .kategori-baslik {
+            color: #fff;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -33,6 +57,8 @@
             max-width: 1000px;
             margin: 0 auto;
         }
+
+        /* Kartlar */
         .kart {
             background-color: #151515;
             border: 1px solid #333;
@@ -43,6 +69,8 @@
             text-align: left;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .kart:hover {
             border-color: #ff007f;
@@ -50,7 +78,7 @@
             box-shadow: 0 10px 20px rgba(255, 0, 127, 0.2);
         }
         .kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
-        .kart p { color: #888; font-size: 0.9em; line-height: 1.5; }
+        .kart p { color: #888; font-size: 0.9em; line-height: 1.5; flex-grow: 1; }
         .etiket {
             background-color: #ff007f;
             color: #fff;
@@ -76,8 +104,11 @@
             width: 100%;
             box-sizing: border-box;
             text-align: center;
+            cursor: pointer;
         }
         .indir-btn:hover { background-color: #ff007f; color: #fff; }
+
+        /* Discord Alanı */
         .discord-alani {
             margin-top: 50px;
             padding: 30px;
@@ -96,35 +127,132 @@
             transition: 0.3s;
         }
         .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); }
+
+        /* Detay Pop-up (Modal) */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+        }
+        .modal-icerik {
+            background-color: #151515;
+            margin: 15% auto; 
+            padding: 30px;
+            border: 2px solid #ff007f;
+            border-radius: 10px;
+            width: 80%; 
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.3);
+        }
+        .kapat-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #ff007f;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .kapat-btn:hover { color: #fff; }
     </style>
 </head>
 <body>
+
+    <!-- Yetkili Ekip Köşesi -->
+    <div class="yetkili-ekip">
+        Yetkili Ekip: TürbanlıBatu & TürbanlıMesut
+    </div>
+
     <header>
         <h1>Hello Scripts</h1>
         <p class="alt-yazi">FiveM Sunucunuz İçin Premium Çözümler</p>
     </header>
+
+    <!-- 1. Kategori: MLO -->
+    <h2 class="kategori-baslik">MLO</h2>
     <div class="container">
         <div class="kart">
             <span class="etiket">YENİ</span>
-            <h3>Advanced Farm Job</h3>
-            <p>Detaylı animasyonlar ve gelişmiş tarım mekanikleri ile sunucunuza derinlik katın.</p>
-            <a href="#" class="indir-btn">Detayları Gör</a>
-        </div>
-        <div class="kart">
-            <span class="etiket">POPÜLER</span>
             <h3>Police MLO</h3>
             <p>Sunucunuz için en iyi dizayn edilmiş, custom polis merkezi MLO'su.</p>
-            <a href="#" class="indir-btn">Detayları Gör</a>
+            <button class="indir-btn" onclick="openModal('Police MLO', 'Bu polis merkezi MLO\\'su tamamen özelleştirilebilir. İçerisinde detaylı sorgu odaları, hücreler ve araç park alanı bulunur.')">Detayları Gör</button>
+        </div>
+        <div class="kart">
+            <h3>Hospital MLO</h3>
+            <p>Detaylı ameliyathane ve hasta odaları ile tam teşekküllü hastane.</p>
+            <button class="indir-btn" onclick="openModal('Hospital MLO', 'Hastane MLO\\'su, sunucunuzdaki EMS rolünü bir üst seviyeye taşır. Detaylı animasyon noktaları ve özel eşyalar içerir.')">Detayları Gör</button>
+        </div>
+    </div>
+
+    <!-- 2. Kategori: Scripts -->
+    <h2 class="kategori-baslik">SCRIPTS</h2>
+    <div class="container">
+        <div class="kart">
+            <span class="etiket">POPÜLER</span>
+            <h3>Advanced Farm Job</h3>
+            <p>Detaylı animasyonlar ve gelişmiş tarım mekanikleri ile sunucunuza derinlik katın.</p>
+            <button class="indir-btn" onclick="openModal('Advanced Farm Job', 'Çiftçilik scripti, tarladan ürün toplama, işleme ve satma aşamalarını içerir. Tamamen optimizasyonludur.')">Detayları Gör</button>
         </div>
         <div class="kart">
             <h3>Custom HUD</h3>
             <p>Şık tasarımlı, düşük ms'li, tamamen optimize edilmiş kişiselleştirilebilir HUD.</p>
-            <a href="#" class="indir-btn">Detayları Gör</a>
+            <button class="indir-btn" onclick="openModal('Custom HUD', 'Oyuncularınızın can, zırh, açlık ve susuzluk durumlarını şık bir arayüzle gösteren HUD. İstediğiniz gibi renklendirilebilir.')">Detayları Gör</button>
         </div>
     </div>
+
+    <!-- 3. Kategori: Temel Paket -->
+    <h2 class="kategori-baslik">TEMEL PAKET</h2>
+    <div class="container">
+        <div class="kart">
+            <span class="etiket">FIRSAT</span>
+            <h3>Başlangıç Paketi</h3>
+            <p>Sunucunuzu yeni açıyorsanız ihtiyacınız olan tüm temel scriptler ve MLO'lar bir arada.</p>
+            <button class="indir-btn" onclick="openModal('Başlangıç Paketi', 'Bu paket içerisinde: Envanter, HUD, Banka, Polis & EMS meslekleri, ve 1 adet MLO bulunur. Sunucunuzu sıfırdan ayağa kaldırmak için mükemmel bir başlangıç.')">Detayları Gör</button>
+        </div>
+    </div>
+
+    <!-- Discord -->
     <div class="discord-alani">
         <h2 style="color: #fff; margin-bottom: 20px;">Desteğe mi İhtiyacın Var?</h2>
         <a href="https://discord.gg/SENIN_DAVET_LINKIN" class="discord-btn" target="_blank">Discord Sunucumuza Katıl</a>
     </div>
+
+    <!-- Modal (Pop-up) Kutusu -->
+    <div id="detayModal" class="modal">
+        <div class="modal-icerik">
+            <span class="kapat-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalBaslik" style="color: #ff007f;">Başlık</h2>
+            <p id="modalAciklama" style="color: #ccc; font-size: 1.1em; line-height: 1.6;">Açıklama buraya gelecek...</p>
+            <a href="https://discord.gg/SENIN_DAVET_LINKIN" target="_blank" class="discord-btn" style="margin-top: 20px; font-size: 1em;">Satın Almak İçin İletişime Geç</a>
+        </div>
+    </div>
+
+    <!-- JavaScript (Pop-up Mantığı) -->
+    <script>
+        function openModal(baslik, aciklama) {
+            document.getElementById('modalBaslik').innerText = baslik;
+            document.getElementById('modalAciklama').innerText = aciklama;
+            document.getElementById('detayModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('detayModal').style.display = "none";
+        }
+
+        // Modal dışına tıklanınca kapanması için
+        window.onclick = function(event) {
+            var modal = document.getElementById('detayModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
