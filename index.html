@@ -19,24 +19,31 @@
 
         /* Senin gönderdiğin resmin olduğu kısım */
         .hero-section {
-            /* Resmin adını buraya yazdık */
             background-image: url('arkaplan.jpg.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 80vh; /* Ekranın %80'ini kaplar */
+            height: 85vh; /* Biraz daha uzattık */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Yazıyı aşağıya doğru ittik */
+            padding-bottom: 80px; /* Alttan boşluk bıraktık */
             position: relative;
-            border-bottom: 2px solid #ff007f;
+            border-bottom: 2px solid #9d4edd; /* Mor çizgi */
         }
 
-        /* Görselin üzerine hafif siyah bir perde (Yazılar okunsun diye) */
+        /* Görselin üzerindeki yazı (siyah perde kaldırıldı, direkt yazı) */
         .hero-overlay {
-            background: rgba(0, 0, 0, 0.4); 
-            padding: 40px;
-            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .hero-overlay p {
+            color: #c77dff; /* Logodaki açık mor tonu */
+            font-size: 1.5em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); /* Mor parlama efekti */
+            font-weight: bold;
         }
 
         /* Kutuları yan yana dizmek için */
@@ -65,9 +72,9 @@
             flex-direction: column;
         }
         .kart:hover {
-            border-color: #ff007f;
+            border-color: #9d4edd; /* Mor hover */
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 0, 127, 0.2);
+            box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3);
         }
         .kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
         .kart p { color: #888; font-size: 0.9em; line-height: 1.5; flex-grow: 1; }
@@ -77,8 +84,8 @@
             margin-top: 15px;
             padding: 10px 15px;
             background-color: transparent;
-            color: #ff007f;
-            border: 2px solid #ff007f;
+            color: #c77dff; /* Mor buton */
+            border: 2px solid #9d4edd;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
@@ -88,13 +95,13 @@
             text-align: center;
             cursor: pointer;
         }
-        .indir-btn:hover { background-color: #ff007f; color: #fff; }
+        .indir-btn:hover { background-color: #9d4edd; color: #fff; }
 
         .discord-alani {
             margin-top: auto;
             padding: 40px 20px;
             background-color: #151515;
-            border-top: 2px solid #ff007f;
+            border-top: 2px solid #9d4edd;
         }
         .discord-btn {
             display: inline-block;
@@ -118,7 +125,7 @@
             line-height: 1.8;
         }
         .yetkili-ekip-alt span {
-            color: #ff007f;
+            color: #c77dff; /* Yetkililerin ismi de mor */
             font-weight: bold;
         }
     </style>
@@ -128,9 +135,7 @@
     <!-- Görselin olduğu dev karşılama alanı -->
     <div class="hero-section">
         <div class="hero-overlay">
-            <!-- İstersen buradaki yazıları değiştirebilir veya silebilirsin -->
-            <h1 style="color: #fff; font-size: 3em; margin: 0; text-shadow: 0 0 20px rgba(0,0,0,0.8);">Hello Development</h1>
-            <p style="color: #ddd; font-size: 1.2em;">FiveM Sunucunuz İçin Premium Çözümler</p>
+            <p>FiveM Sunucunuz İçin Premium Çözümler</p>
         </div>
     </div>
 
