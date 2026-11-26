@@ -13,8 +13,11 @@
             padding: 0;
             text-align: center;
             background-image: radial-gradient(circle at 50% 0%, #2a0a1a 0%, #0a0a0a 60%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        header { padding: 40px 20px; position: relative; }
+        header { padding: 40px 20px; }
         h1 {
             color: #ff007f;
             font-size: 3.5em;
@@ -24,20 +27,6 @@
             text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
         p.alt-yazi { color: #aaaaaa; font-size: 1.2em; }
-
-        /* Yetkili Ekip Yazısı */
-        .yetkili-ekip {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            background-color: rgba(255, 0, 127, 0.1);
-            border: 1px solid #ff007f;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: #ff007f;
-            font-weight: bold;
-        }
 
         /* Kategoriler */
         .kategori-baslik {
@@ -79,17 +68,7 @@
         }
         .kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
         .kart p { color: #888; font-size: 0.9em; line-height: 1.5; flex-grow: 1; }
-        .etiket {
-            background-color: #ff007f;
-            color: #fff;
-            font-size: 0.7em;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 5px;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
+        
         .indir-btn {
             display: inline-block;
             margin-top: 15px;
@@ -110,8 +89,8 @@
 
         /* Discord Alanı */
         .discord-alani {
-            margin-top: 50px;
-            padding: 30px;
+            margin-top: auto;
+            padding: 40px 20px;
             background-color: #151515;
             border-top: 2px solid #ff007f;
         }
@@ -127,6 +106,20 @@
             transition: 0.3s;
         }
         .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); }
+
+        /* Alt Kısımdaki Yetkili Ekip */
+        .yetkili-ekip-alt {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+            color: #888;
+            line-height: 1.8;
+        }
+        .yetkili-ekip-alt span {
+            color: #ff007f;
+            font-weight: bold;
+        }
 
         /* Detay Pop-up (Modal) */
         .modal {
@@ -165,11 +158,6 @@
 </head>
 <body>
 
-    <!-- Yetkili Ekip Köşesi -->
-    <div class="yetkili-ekip">
-        Yetkili Ekip: TürbanlıBatu & TürbanlıMesut
-    </div>
-
     <header>
         <h1>Hello Scripts</h1>
         <p class="alt-yazi">FiveM Sunucunuz İçin Premium Çözümler</p>
@@ -179,15 +167,9 @@
     <h2 class="kategori-baslik">MLO</h2>
     <div class="container">
         <div class="kart">
-            <span class="etiket">YENİ</span>
-            <h3>Police MLO</h3>
-            <p>Sunucunuz için en iyi dizayn edilmiş, custom polis merkezi MLO'su.</p>
-            <button class="indir-btn" onclick="openModal('Police MLO', 'Bu polis merkezi MLO\\'su tamamen özelleştirilebilir. İçerisinde detaylı sorgu odaları, hücreler ve araç park alanı bulunur.')">Detayları Gör</button>
-        </div>
-        <div class="kart">
-            <h3>Hospital MLO</h3>
-            <p>Detaylı ameliyathane ve hasta odaları ile tam teşekküllü hastane.</p>
-            <button class="indir-btn" onclick="openModal('Hospital MLO', 'Hastane MLO\\'su, sunucunuzdaki EMS rolünü bir üst seviyeye taşır. Detaylı animasyon noktaları ve özel eşyalar içerir.')">Detayları Gör</button>
+            <h3>Özel MLO Paketleri</h3>
+            <p>Sunucunuzun ihtiyacına göre özel olarak tasarlanmış, detaylı ve optimize edilmiş harita (MLO) çözümleri.</p>
+            <button class="indir-btn" onclick="openModal('Özel MLO Paketleri', 'Sunucunuz için polis merkezi, hastane, restoran veya istediğiniz herhangi bir mekanın özel tasarım MLO\\'sunu yaptırabilirsiniz. Discord üzerinden bizimle iletişime geçin.')">Detayları Gör</button>
         </div>
     </div>
 
@@ -195,15 +177,9 @@
     <h2 class="kategori-baslik">SCRIPTS</h2>
     <div class="container">
         <div class="kart">
-            <span class="etiket">POPÜLER</span>
-            <h3>Advanced Farm Job</h3>
-            <p>Detaylı animasyonlar ve gelişmiş tarım mekanikleri ile sunucunuza derinlik katın.</p>
-            <button class="indir-btn" onclick="openModal('Advanced Farm Job', 'Çiftçilik scripti, tarladan ürün toplama, işleme ve satma aşamalarını içerir. Tamamen optimizasyonludur.')">Detayları Gör</button>
-        </div>
-        <div class="kart">
-            <h3>Custom HUD</h3>
-            <p>Şık tasarımlı, düşük ms'li, tamamen optimize edilmiş kişiselleştirilebilir HUD.</p>
-            <button class="indir-btn" onclick="openModal('Custom HUD', 'Oyuncularınızın can, zırh, açlık ve susuzluk durumlarını şık bir arayüzle gösteren HUD. İstediğiniz gibi renklendirilebilir.')">Detayları Gör</button>
+            <h3>Düz Scriptler</h3>
+            <p>Sunucunuzun performansını artıracak, rol yapma deneyimini derinleştirecek optimize edilmiş kaliteli scriptler.</p>
+            <button class="indir-btn" onclick="openModal('Düz Scriptler', 'HUD, envanter, meslekler, araç sistemleri ve daha fazlası. Tamamen sunucunuza uyumlu, düşük ms\\'li scriptler için bize ulaşın.')">Detayları Gör</button>
         </div>
     </div>
 
@@ -211,17 +187,23 @@
     <h2 class="kategori-baslik">TEMEL PAKET</h2>
     <div class="container">
         <div class="kart">
-            <span class="etiket">FIRSAT</span>
             <h3>Başlangıç Paketi</h3>
-            <p>Sunucunuzu yeni açıyorsanız ihtiyacınız olan tüm temel scriptler ve MLO'lar bir arada.</p>
-            <button class="indir-btn" onclick="openModal('Başlangıç Paketi', 'Bu paket içerisinde: Envanter, HUD, Banka, Polis & EMS meslekleri, ve 1 adet MLO bulunur. Sunucunuzu sıfırdan ayağa kaldırmak için mükemmel bir başlangıç.')">Detayları Gör</button>
+            <p>Sunucunuzu yeni açıyorsanız ihtiyacınız olan tüm temel scriptler ve MLO'lar tek bir pakette.</p>
+            <button class="indir-btn" onclick="openModal('Temel Başlangıç Paketi', 'Bu paket içerisinde: Envanter, HUD, Banka, Polis & EMS meslekleri, ve 1 adet MLO bulunur. Sunucunuzu sıfırdan ayağa kaldırmak için mükemmel bir başlangıç.')">Detayları Gör</button>
         </div>
     </div>
 
-    <!-- Discord -->
+    <!-- Discord ve Alt Bilgi -->
     <div class="discord-alani">
         <h2 style="color: #fff; margin-bottom: 20px;">Desteğe mi İhtiyacın Var?</h2>
         <a href="https://discord.gg/SENIN_DAVET_LINKIN" class="discord-btn" target="_blank">Discord Sunucumuza Katıl</a>
+        
+        <!-- Yetkili Ekip Alt Alta -->
+        <div class="yetkili-ekip-alt">
+            Yetkili Ekip:<br>
+            <span>TürbanlıBatu</span><br>
+            <span>TürbanlıMesut</span>
+        </div>
     </div>
 
     <!-- Modal (Pop-up) Kutusu -->
@@ -246,7 +228,6 @@
             document.getElementById('detayModal').style.display = "none";
         }
 
-        // Modal dışına tıklanınca kapanması için
         window.onclick = function(event) {
             var modal = document.getElementById('detayModal');
             if (event.target == modal) {
