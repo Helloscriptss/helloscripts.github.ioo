@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Scripts | FiveM</title>
+    <title>Hello Development | FiveM</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,21 +12,32 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background-image: radial-gradient(circle at 50% 0%, #2a0a1a 0%, #0a0a0a 60%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        header { padding: 40px 20px; }
-        h1 {
-            color: #ff007f;
-            font-size: 3.5em;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+
+        /* Senin gönderdiğin resmin olduğu kısım */
+        .hero-section {
+            /* Resmin adını buraya yazdık */
+            background-image: url('arkaplan.jpg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh; /* Ekranın %80'ini kaplar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 2px solid #ff007f;
         }
-        p.alt-yazi { color: #aaaaaa; font-size: 1.2em; }
+
+        /* Görselin üzerine hafif siyah bir perde (Yazılar okunsun diye) */
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4); 
+            padding: 40px;
+            border-radius: 10px;
+        }
 
         /* Kutuları yan yana dizmek için */
         .container {
@@ -35,8 +46,8 @@
             justify-content: center;
             align-items: stretch;
             gap: 20px;
-            padding: 20px;
-            max-width: 1400px; /* 4 kutu sığsın diye genişlettik */
+            padding: 40px 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -44,7 +55,7 @@
             background-color: #151515;
             border: 1px solid #333;
             border-radius: 10px;
-            width: 280px; /* 4 kutu yan yana sığsın diye biraz daralttık */
+            width: 280px;
             padding: 20px;
             transition: all 0.3s ease;
             text-align: left;
@@ -114,12 +125,16 @@
 </head>
 <body>
 
-    <header>
-        <h1>Hello Scripts</h1>
-        <p class="alt-yazi">FiveM Sunucunuz İçin Premium Çözümler</p>
-    </header>
+    <!-- Görselin olduğu dev karşılama alanı -->
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <!-- İstersen buradaki yazıları değiştirebilir veya silebilirsin -->
+            <h1 style="color: #fff; font-size: 3em; margin: 0; text-shadow: 0 0 20px rgba(0,0,0,0.8);">Hello Development</h1>
+            <p style="color: #ddd; font-size: 1.2em;">FiveM Sunucunuz İçin Premium Çözümler</p>
+        </div>
+    </div>
 
-    <!-- Yan Yana 4 Kutu -->
+    <!-- Yan Yana Kutular -->
     <div class="container">
         
         <div class="kart">
@@ -134,11 +149,11 @@
             <a href="scripts.html" class="indir-btn" style="text-decoration: none;">İçeriği Gör</a>
         </div>
 
-        <!-- YENİ EKLENEN KUTU: FREE SCRIPTS -->
         <div class="kart">
             <h3>Free Scripts</h3>
             <p>Bütçeniz yok mu? Sunucunuzu geliştirmek için tamamen ücretsiz, açık kaynaklı kaliteli scriptler.</p>
-            <a href="free.html" class="indir-btn" style="text-decoration: none;">İçeriği Gör</a>
+            <!-- Dikkat: Dosya adını ücretsiz.html yapmıştın, o yüzden burayı öyle bıraktım -->
+            <a href="ücretsiz.html" class="indir-btn" style="text-decoration: none;">İçeriği Gör</a>
         </div>
 
         <div class="kart">
