@@ -3,28 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello | Kişisel Site</title>
+    <title>Hello Scripts | FiveM</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a2e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
             color: #ffffff;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: radial-gradient(circle at 50% 0%, #2a0a1a 0%, #0a0a0a 60%);
         }
+        header { padding: 40px 20px; }
         h1 {
-            color: #e94560;
-            font-size: 5em;
+            color: #ff007f;
+            font-size: 3.5em;
             text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
+        p.alt-yazi { color: #aaaaaa; font-size: 1.2em; }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .kart {
+            background-color: #151515;
+            border: 1px solid #333;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .kart:hover {
+            border-color: #ff007f;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 127, 0.2);
+        }
+        .kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
+        .kart p { color: #888; font-size: 0.9em; line-height: 1.5; }
+        .etiket {
+            background-color: #ff007f;
+            color: #fff;
+            font-size: 0.7em;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .indir-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: #ff007f;
+            border: 2px solid #ff007f;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .indir-btn:hover { background-color: #ff007f; color: #fff; }
+        .discord-alani {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #151515;
+            border-top: 2px solid #ff007f;
+        }
+        .discord-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #5865F2;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); }
     </style>
 </head>
 <body>
-    <h1>HELLO</h1>
+    <header>
+        <h1>Hello Scripts</h1>
+        <p class="alt-yazi">FiveM Sunucunuz İçin Premium Çözümler</p>
+    </header>
+    <div class="container">
+        <div class="kart">
+            <span class="etiket">YENİ</span>
+            <h3>Advanced Farm Job</h3>
+            <p>Detaylı animasyonlar ve gelişmiş tarım mekanikleri ile sunucunuza derinlik katın.</p>
+            <a href="#" class="indir-btn">Detayları Gör</a>
+        </div>
+        <div class="kart">
+            <span class="etiket">POPÜLER</span>
+            <h3>Police MLO</h3>
+            <p>Sunucunuz için en iyi dizayn edilmiş, custom polis merkezi MLO'su.</p>
+            <a href="#" class="indir-btn">Detayları Gör</a>
+        </div>
+        <div class="kart">
+            <h3>Custom HUD</h3>
+            <p>Şık tasarımlı, düşük ms'li, tamamen optimize edilmiş kişiselleştirilebilir HUD.</p>
+            <a href="#" class="indir-btn">Detayları Gör</a>
+        </div>
+    </div>
+    <div class="discord-alani">
+        <h2 style="color: #fff; margin-bottom: 20px;">Desteğe mi İhtiyacın Var?</h2>
+        <a href="https://discord.gg/SENIN_DAVET_LINKIN" class="discord-btn" target="_blank">Discord Sunucumuza Katıl</a>
+    </div>
 </body>
 </html>
