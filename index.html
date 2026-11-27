@@ -3,131 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090d0d">
-  <title>HELLO SCRIPTS · Community</title>
+  <title>HELLO SCRIPTS · Ana Sayfa</title>
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; --max:1180px; --radius:17px; }
-    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;overflow-x:hidden} a{color:inherit;text-decoration:none} button{font:inherit}
-    .container{width:min(var(--max),calc(100% - 44px));margin-inline:auto}
-    .announcement{min-height:36px;display:flex;align-items:center;justify-content:center;padding:7px 18px;background:#12352c;border-bottom:1px solid rgba(102,255,197,.12);color:#c7f6e4;text-align:center;font-size:11px;font-weight:800;letter-spacing:1.35px;text-transform:uppercase}
-    .site-header{position:sticky;top:0;z-index:20;background:rgba(8,13,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{height:78px;display:flex;align-items:center;gap:30px}
-    .brand{display:inline-flex;align-items:center;gap:11px}
-    .brand-mark{width:41px;height:41px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#64efba,#167653);color:#07130f;font-size:21px;font-weight:700}
-    .brand-name{font-weight:700;font-size:15px;letter-spacing:1.25px;line-height:1.1}
-    .brand-sub{display:block;margin-top:5px;color:var(--muted);font-size:8px;letter-spacing:2.3px;font-weight:700}
-    .nav-links{display:flex;align-items:center;gap:5px;margin-left:auto}
-    .nav-links a{padding:10px 13px;border-radius:9px;color:#aab8b3;font-size:12px;font-weight:700;transition:.2s}
-    .nav-links a:hover,.nav-links a.active{background:rgba(76,224,174,.09);color:#e8fff5}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .nav-social{color:#c5d0cc;font-size:12px;font-weight:700}
-    .nav-social:hover{color:var(--green)}
-    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(76,224,174,.32);border-radius:10px;background:linear-gradient(135deg,#38bd8d,#207d60);color:#04120c;padding:11px 16px;font-size:12px;font-weight:800;transition:transform .2s}
-    .nav-cta:hover,.button:hover{transform:translateY(-2px)}
-    .hero{position:relative;min-height:530px;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line);background:#0d1615}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 78% 45%,rgba(41,151,111,.26),transparent 32%),linear-gradient(120deg,#0b1412 5%,#15221e 60%,#0c1714 100%)}
-    .hero-content{padding:85px 0;max-width:700px}
-    h1{font-size:clamp(43px,6.4vw,75px);line-height:1.02;letter-spacing:-3px;margin-bottom:19px}
-    .accent{color:var(--green)} .hero-copy{color:#bdc9c4;font-size:15px;margin-bottom:28px}
-    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-    .button-outline{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border:1px solid rgba(234,255,247,.17);border-radius:10px;color:#e4efea;font-size:12px;font-weight:800}
-    .hero-meta{display:flex;gap:25px;margin-top:43px;color:#aab8b3;font-size:11px}
-    section{padding:86px 0}
-    .section-heading{text-align:center;margin-bottom:38px}
-    .section-kicker{color:var(--green);font-size:10px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:9px}
-    h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#15211e,#0d1413);transition:.2s}
-    .card:hover{transform:translateY(-4px);border-color:rgba(76,224,174,.32)}
-    .card h3{font-size:17px;margin-bottom:8px}
-    .card p{color:var(--muted);font-size:12px;margin:0}
-    .text-link{display:inline-flex;margin-top:17px;color:#8cf0c4;font-size:11px;font-weight:800}
-    footer{border-top:1px solid var(--line);background:#080c0b;padding:30px 0;text-align:center;font-size:12px;color:var(--muted)}
-    @media(max-width:768px){.grid-3{grid-template-columns:1fr}.nav-links{display:none}}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;} a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .announcement{padding:10px;background:#12352c;color:#c7f6e4;text-align:center;font-size:12px;font-weight:bold;letter-spacing:1px}
+    header{position:sticky;top:0;z-index:20;background:#090d0d;border-bottom:1px solid var(--line);padding:15px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:18px}
+    .brand-icon{background:var(--green);color:#090d0d;padding:8px 12px;border-radius:8px;font-size:20px}
+    .links{display:flex;gap:20px;align-items:center}
+    .links a{color:var(--muted);font-size:13px;font-weight:bold;transition:.2s}
+    .links a:hover, .links a.active{color:var(--green)}
+    .btn-giris{background:var(--green);color:#090d0d !important;padding:8px 15px;border-radius:8px}
+    .hero{padding:100px 0;text-align:center;background:radial-gradient(ellipse at center, #15221e 0%, #090d0d 100%)}
+    .hero h1{font-size:50px;margin-bottom:20px}
+    .hero span{color:var(--green)}
+    .hero p{color:var(--muted);font-size:16px;margin-bottom:40px}
+    .btn{background:var(--green);color:#090d0d;padding:12px 25px;border-radius:8px;font-weight:bold;display:inline-block}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;padding:50px 0}
+    .card{background:var(--surface);border:1px solid var(--line);padding:30px;border-radius:var(--radius)}
+    .card h3{color:var(--green);margin-bottom:10px}
+    .card p{color:var(--muted);font-size:14px;margin-bottom:20px}
+    footer{text-align:center;padding:30px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
   <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
-
-  <header class="site-header">
+  <header>
     <div class="container nav">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">H</span>
-        <span><span class="brand-name">HELLO SCRIPTS</span><span class="brand-sub">FIVEM COMMUNITY</span></span>
-      </a>
-      <nav class="nav-links">
-        <a class="active" href="index.html">Ana Sayfa</a>
+      <div class="brand"><span class="brand-icon">H</span> HELLO SCRIPTS</div>
+      <div class="links">
+        <a href="index.html" class="active">Ana Sayfa</a>
         <a href="mods.html">Modlar</a>
         <a href="scripts.html">Scriptler</a>
         <a href="free.html">Ücretsiz</a>
         <a href="anticheat.html">Anti-Cheat</a>
         <a href="mlo.html">MLO</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="nav-social" href="https://discord.gg/jetKFrMHg" target="_blank">Discord ↗</a>
-        <a class="nav-cta" href="giris.html">Giriş Yap ↗</a>
+        <a href="giris.html" class="btn-giris">Giriş Yap</a>
       </div>
     </div>
   </header>
-
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <div class="section-kicker">Roleplay topluluğu için tasarlandı</div>
-        <h1>Hoş Geldin<br><span class="accent">Hello Scripts.</span></h1>
-        <p class="hero-copy">Yaratıcılık, kalite ve daha iyi bir FiveM deneyimi odaklı bir topluluk. Çalışmalarımızı keşfedin, en son güncellemeleri takip edin ve topluluktan yardım alın.</p>
-        <div class="hero-buttons">
-          <a class="button" href="scripts.html">Scriptleri Keşfet →</a>
-          <a class="button-outline" href="#about">Daha Fazla Bilgi ↗</a>
-        </div>
-        <div class="hero-meta">
-          <span>✓ Topluluk odaklı yaklaşım</span>
-          <span>✓ Faydalı destek</span>
-          <span>✓ Düzenli güncellemeler</span>
-        </div>
+      <div class="container">
+        <h1>Hoş Geldin<br><span>Hello Scripts.</span></h1>
+        <p>Yaratıcılık, kalite ve daha iyi bir FiveM deneyimi odaklı topluluk.</p>
+        <a href="scripts.html" class="btn">Scriptleri Keşfet →</a>
+        <a href="https://discord.gg/jetKFrMHg" target="_blank" class="btn" style="background:transparent; border:1px solid var(--line); color:white; margin-left:10px;">Discord'a Katıl</a>
       </div>
     </section>
-
-    <section>
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Topluluk Merkezi</div>
-          <h2>Her şey tek bir yerde</h2>
+    <section class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>Modlar</h3>
+          <p>Sunucunuz için en iyi araç ve modlar.</p>
+          <a href="mods.html" style="color:var(--green); font-weight:bold;">Modları Gör →</a>
         </div>
-        <div class="grid-3">
-          <article class="card">
-            <h3>Projelerimiz</h3>
-            <p>Yaratıcı çalışmalarımıza göz atın ve projeleri takip edin.</p>
-            <a class="text-link" href="mods.html">Modları Gör →</a>
-          </article>
-          <article class="card">
-            <h3>Topluluk Güncellemeleri</h3>
-            <p>Duyuruları ve önemli haberleri takip edin.</p>
-            <a class="text-link" href="scripts.html">Scriptleri Gör →</a>
-          </article>
-          <article class="card">
-            <h3>Yardım & Destek</h3>
-            <p>Sorularınız için topluluk ekibiyle iletişime geçin.</p>
-            <a class="text-link" href="https://discord.gg/jetKFrMHg" target="_blank">Destek Al →</a>
-          </article>
+        <div class="card">
+          <h3>Scriptler</h3>
+          <p>Kaliteli ve optimize edilmiş scriptler.</p>
+          <a href="scripts.html" style="color:var(--green); font-weight:bold;">Scriptleri Gör →</a>
         </div>
-      </div>
-    </section>
-
-    <section id="about" style="background:var(--surface)">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Hello Scripts Hakkında</div>
-          <h2>Fikirler, yaratıcılık ve roleplay için bir yer.</h2>
-          <p style="color:var(--muted)">Hello Scripts, FiveM roleplay deneyimini geliştiren insanlar için bir topluluk alanıdır.</p>
+        <div class="card">
+          <h3>Anti-Cheat</h3>
+          <p>Sunucunuzu hilelerden koruyun.</p>
+          <a href="anticheat.html" style="color:var(--green); font-weight:bold;">Sistemi Gör →</a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="container">© <span id="year"></span> Hello Scripts. Tüm hakları saklıdır.</div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer>© 2026 Hello Scripts. Tüm hakları saklıdır.</footer>
 </body>
 </html>
