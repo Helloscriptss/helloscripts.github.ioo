@@ -4,10 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HELLO SCRIPTS · Community</title>
+  
+  <!-- GİRİŞ KONTROLÜ -->
   <script>
-    if(localStorage.getItem('isLoggedIn') !== 'true') { window.location.href = 'giris.html'; }
+    // Sayfa yüklenmeden önce kontrol et
+    window.onload = function() {
+      if(localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'giris.html';
+      } else {
+        // Giriş yapılmışsa sayfayı göster
+        document.body.style.display = 'block';
+      }
+    };
   </script>
+  
   <style>
+    /* Sayfa giriş kontrolü yapılana kadar gizli kalsın (siyah ekran) */
+    body { display: none; background-color: #090d0d; color: #f2f6f4; font-family: Arial, sans-serif; }
+    
     :root{color-scheme:dark;--bg:#090d0d;--surface:#101717;--text:#f2f6f4;--muted:#9baaa6;--line:rgba(224,255,246,.09);--green:#4ce0ae;--max:1180px;--radius:17px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}
     .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
@@ -43,7 +57,6 @@
     .mini-stat strong{display:block;color:var(--green);font-size:20px}
     .mini-stat span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}
     
-    /* UFAK YETKİLİ EKİP */
     .team-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;max-width:600px;margin:0 auto}
     .team-card{display:flex;align-items:center;padding:15px 25px;border:1px solid var(--line);border-radius:50px;background:var(--surface);transition:.2s}
     .team-card:hover{border-color:var(--green);transform:translateY(-3px)}
