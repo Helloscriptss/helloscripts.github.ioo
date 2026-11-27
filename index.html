@@ -65,6 +65,15 @@
     .mini-stat{padding:18px;border:1px solid var(--line);border-radius:13px;background:rgba(5,13,11,.38)}
     .mini-stat strong{display:block;color:var(--green);font-size:23px}
     .mini-stat span{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase}
+    
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:20px;justify-content:center;max-width:800px;margin:0 auto;}
+    .team-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:35px 25px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#101717,#0d1413);transition:.2s}
+    .team-card:hover{border-color:var(--green);transform:translateY(-5px)}
+    .team-avatar{width:90px;height:90px;border-radius:50%;background:rgba(76,224,174,.1);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:32px;font-weight:bold;color:var(--green);box-shadow:0 10px 25px rgba(76,224,174,.15)}
+    .team-card h3{margin-bottom:5px;font-size:20px;color:var(--text)}
+    .team-role{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:15px}
+    .team-desc{color:var(--muted);font-size:12px;line-height:1.6;margin-bottom:20px;flex-grow:1}
+
     .support-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .support-card{display:flex;gap:18px;align-items:flex-start;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
     .support-card .card-icon{flex:0 0 auto;margin:0}
@@ -223,6 +232,25 @@
       </div>
     </div>
 
+    <section id="team" style="padding-top:0; padding-bottom:40px;">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Yönetim Kadrosu</div>
+          <h2>Yetkili Ekibimiz</h2>
+          <p>Hello Scripts topluluğunu bir arada tutan ve geliştiren isimler.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-avatar">TB</div>
+            <h3>TürbanlıBatu</h3>
+            <div class="team-role">Kurucu / Founder</div>
+            <p class="team-desc">Topluluğun kurucusu, projelerin baş mimarı ve sunucu yönetiminden sorumlu kişi.</p>
+            <a class="text-link" href="https://discord.gg/jetKFrMHg" target="_blank">İletişime Geç ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="container">
         <div class="section-heading">
@@ -239,41 +267,4 @@
             <div class="card-icon">◷</div>
             <div><h3>Haberler & Duyurular</h3><p>Topluluk duyuruları ve proje haberleri bu alanda paylaşılacaktır.</p><a class="text-link" href="scripts.html">Scriptleri Keşfet →</a></div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="support" style="padding-top:10px">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Yardım etmek için buradayız</div>
-          <h2>Biraz yardıma mı ihtiyacınız var?</h2>
-          <p>Bir iletişim kanalı seçin, topluluk ekibimiz sizi doğru yöne yönlendirsin.</p>
-        </div>
-        <div class="support-grid">
-          <article class="support-card">
-            <div class="card-icon">◉</div>
-            <div><h3>Discord Topluluğu</h3><p>Topluluğa katılın, sorular sorun, duyuruları takip edin ve diğer üyelerle sohbet edin.</p><a class="text-link" href="https://discord.gg/jetKFrMHg" target="_blank">Discord'u Aç ↗</a></div>
-          </article>
-          <article class="support-card">
-            <div class="card-icon">✉</div>
-            <div><h3>İletişim</h3><p>Genel sorular ve iş birliği talepleri için ekiple iletişime geçin.</p><a class="text-link" href="giris.html">Giriş Yap ↗</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container faq-layout">
-        <div class="faq-intro">
-          <div class="section-kicker">Bilgi & SSS</div>
-          <h2>Sıkça sorulan sorular.</h2>
-          <p>Topluluğu anlamanıza ve doğru iletişim kanalını bulmanıza yardımcı olacak hızlı cevaplar.</p>
-          <a class="button" href="https://discord.gg/jetKFrMHg" target="_blank">Discord'da Sorun ↗</a>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item open">
-            <button class="faq-question" aria-expanded="true">Hello Scripts nedir? <span class="plus">+</span></button>
-            <div class="faq-answer">Hello Scripts, FiveM, rol yapma projeleri, bilgi ve topluluk desteğine odaklanan bir topluluk web sitesidir.</div>
-          </div>
-          <div
+       
