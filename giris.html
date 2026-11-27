@@ -7,103 +7,58 @@
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
     * { box-sizing: border-box; }
-    html, body { margin: 0 !important; padding: 0 !important; background-color: #090d0d !important; color: #f2f6f4 !important; font-family: Arial, sans-serif; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
-    .announcement { padding: 10px; background: #12352c !important; color: #c7f6e4 !important; text-align: center; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
-    header { position: sticky; top: 0; z-index: 20; background: #090d0d !important; border-bottom: 1px solid var(--line); padding: 15px 0; }
-    .nav { display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px; color: #f2f6f4 !important; }
-    .brand-icon { background: var(--green) !important; color: #090d0d !important; padding: 8px 12px; border-radius: 8px; font-size: 20px; }
-    .links { display: flex; gap: 20px; align-items: center; }
-    .links a { color: var(--muted) !important; font-size: 13px; font-weight: bold; transition: .2s; }
-    .links a:hover, .links a.active { color: var(--green) !important; }
-    .btn-giris { background: var(--green) !important; color: #090d0d !important; padding: 8px 15px; border-radius: 8px; }
-    
-    /* FORM TASARIMI */
-    .auth-container { max-width: 400px; margin: 60px auto; background: var(--surface); padding: 35px; border-radius: 12px; border: 1px solid var(--line); }
+    html, body { margin: 0; padding: 0; background-color: var(--bg); color: var(--text); font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .auth-container { max-width: 400px; width: 100%; background: var(--surface); padding: 35px; border-radius: 12px; border: 1px solid var(--line); }
     .auth-tabs { display: flex; margin-bottom: 25px; border-bottom: 1px solid var(--line); }
     .auth-tab { flex: 1; text-align: center; padding: 10px; font-weight: bold; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: .2s; }
     .auth-tab.active { color: var(--green); border-bottom-color: var(--green); }
     .auth-form { display: none; }
     .auth-form.active { display: block; }
-    .auth-form h2 { color: var(--green); margin-top: 0; margin-bottom: 20px; text-align: center; font-size: 22px; }
+    .auth-form h2 { color: var(--green); margin-top: 0; text-align: center; }
     .auth-form input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: white; outline: none; }
-    .auth-form input:focus { border-color: var(--green); }
-    .auth-form button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: var(--green); color: #090d0d; font-weight: bold; font-size: 16px; cursor: pointer; transition: .2s; }
+    .auth-form button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: var(--green); color: #090d0d; font-weight: bold; font-size: 16px; cursor: pointer; }
     .auth-form button:hover { filter: brightness(1.1); }
-    .auth-desc { color: var(--muted); font-size: 13px; text-align: center; margin-bottom: 25px; }
-    
-    footer { text-align: center; padding: 30px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 12px; background: #090d0d !important; margin-top: auto; }
   </style>
 </head>
 <body>
-  <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
-  <header>
-    <div class="container nav">
-      <div class="brand"><span class="brand-icon">H</span> HELLO SCRIPTS</div>
-      <div class="links">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="mods.html">Modlar</a>
-        <a href="scripts.html">Scriptler</a>
-        <a href="free.html">Ücretsiz</a>
-        <a href="anticheat.html">Anti-Cheat</a>
-        <a href="mlo.html">MLO</a>
-        <a href="giris.html" class="btn-giris active">Giriş / Üye Ol</a>
-      </div>
+  <div class="auth-container">
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="showTab('login')">Giriş Yap</div>
+      <div class="auth-tab" onclick="showTab('register')">Üye Ol</div>
     </div>
-  </header>
-
-  <main class="container">
-    <div class="auth-container">
-      <div class="auth-tabs">
-        <div class="auth-tab active" onclick="showTab('login')">Giriş Yap</div>
-        <div class="auth-tab" onclick="showTab('register')">Üye Ol</div>
-      </div>
-
-      <!-- GİRİŞ YAP FORMU -->
-      <div id="login" class="auth-form active">
-        <h2>Tekrar Hoş Geldin</h2>
-        <p class="auth-desc">Hesabına giriş yap ve kaldığın yerden devam et.</p>
-        <form action="#" method="POST">
-          <input type="text" placeholder="Kullanıcı Adı veya E-posta" required>
-          <input type="password" placeholder="Şifre" required>
-          <button type="button">Giriş Yap</button>
-        </form>
-      </div>
-
-      <!-- ÜYE OL FORMU -->
-      <div id="register" class="auth-form">
-        <h2>Aramıza Katıl</h2>
-        <p class="auth-desc">Yeni bir hesap oluştur ve topluluğun bir parçası ol.</p>
-        <form action="#" method="POST">
-          <input type="text" placeholder="Kullanıcı Adı" required>
-          <input type="email" placeholder="E-posta Adresi" required>
-          <input type="password" placeholder="Şifre" required>
-          <button type="button">Kayıt Ol</button>
-        </form>
-      </div>
+    
+    <div id="login" class="auth-form active">
+      <h2>Tekrar Hoş Geldin</h2>
+      <form>
+        <input type="text" placeholder="Kullanıcı Adı" required>
+        <input type="password" placeholder="Şifre" required>
+        <button type="button" onclick="loginUser()">Giriş Yap</button>
+      </form>
     </div>
-  </main>
+    
+    <div id="register" class="auth-form">
+      <h2>Aramıza Katıl</h2>
+      <form>
+        <input type="text" placeholder="Kullanıcı Adı" required>
+        <input type="email" placeholder="E-posta" required>
+        <input type="password" placeholder="Şifre" required>
+        <button type="button" onclick="loginUser()">Kayıt Ol</button>
+      </form>
+    </div>
+  </div>
 
-  <footer>© 2026 Hello Scripts. Tüm hakları saklıdır.</footer>
-
-  <!-- SEKMELER ARASI GEÇİŞ İÇİN JAVASCRIPT -->
   <script>
     function showTab(tabId) {
-      // Tüm formları ve sekmeleri gizle
-      document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
-      document.querySelectorAll('.auth-tab').forEach(tab => tab.classList.remove('active'));
-      
-      // Seçili olanı göster
+      document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
-      
-      // Tıklanan sekmeyi aktif yap
-      if(tabId === 'login') {
-        document.querySelectorAll('.auth-tab')[0].classList.add('active');
-      } else {
-        document.querySelectorAll('.auth-tab')[1].classList.add('active');
-      }
+      if(tabId === 'login') document.querySelectorAll('.auth-tab')[0].classList.add('active');
+      else document.querySelectorAll('.auth-tab')[1].classList.add('active');
+    }
+
+    function loginUser() {
+      localStorage.setItem('isLoggedIn', 'true'); 
+      window.location.href = 'index.html'; 
     }
   </script>
 </body>
