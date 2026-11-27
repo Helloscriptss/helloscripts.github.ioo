@@ -1,81 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş / Kayıt | Hello Development</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('arkaplan.jpg.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .login-box {
-            background-color: rgba(21, 21, 21, 0.85); 
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(157, 78, 221, 0.5);
-            border-radius: 10px;
-            padding: 30px;
-            width: 350px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            position: relative;
-            overflow: hidden;
-        }
-        .tabs { display: flex; margin-bottom: 20px; border-bottom: 1px solid #444; }
-        .tab-btn { flex: 1; background: none; border: none; color: #888; padding: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .tab-btn.active { color: #c77dff; border-bottom: 2px solid #9d4edd; }
-        .form-content { display: none; }
-        .form-content.active { display: block; }
-        h2 { color: #c77dff; text-align: center; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.5em; }
-        input { width: 100%; padding: 12px; margin-bottom: 15px; background-color: rgba(10, 10, 10, 0.8); border: 1px solid #444; border-radius: 5px; color: white; box-sizing: border-box; outline: none; }
-        input:focus { border-color: #9d4edd; }
-        button[type="submit"] { width: 100%; padding: 12px; background-color: #9d4edd; border: none; border-radius: 5px; color: white; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        button[type="submit"]:hover { background-color: #c77dff; box-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giriş Yap · Hello Scripts</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6; display:flex; flex-direction:column; min-height:100vh;} a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+    .announcement{padding:10px;background:#12352c;color:#c7f6e4;text-align:center;font-size:12px;font-weight:bold}
+    header{position:sticky;top:0;z-index:20;background:#090d0d;border-bottom:1px solid var(--line);padding:15px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:18px}
+    .brand-icon{background:var(--green);color:#090d0d;padding:8px 12px;border-radius:8px;font-size:20px}
+    .links{display:flex;gap:20px;align-items:center}
+    .links a{color:var(--muted);font-size:13px;font-weight:bold;transition:.2s}
+    .links a:hover, .links a.active{color:var(--green)}
+    .btn-giris{background:var(--green);color:#090d0d !important;padding:8px 15px;border-radius:8px}
+    .login-box{max-width:400px; margin: 80px auto; background:var(--surface); padding:40px; border-radius:12px; border:1px solid var(--line); text-align:center;}
+    .login-box h2{color:var(--green); margin-top:0;}
+    .login-box input{width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:white;}
+    .login-box button{width:100%; padding:12px; border:none; border-radius:8px; background:var(--green); color:#090d0d; font-weight:bold; font-size:16px; cursor:pointer;}
+    footer{text-align:center;padding:30px;border-top:1px solid var(--line);color:var(--muted);font-size:12px; margin-top:auto;}
+  </style>
 </head>
 <body>
-    <div class="login-box">
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('giris')">Giriş Yap</button>
-            <button class="tab-btn" onclick="openTab('kayit')">Üye Ol</button>
-        </div>
-        <div id="giris" class="form-content active">
-            <h2>Giriş Yap</h2>
-            <form action="anasayfa.html">
-                <input type="text" placeholder="Kullanıcı Adı" required>
-                <input type="password" placeholder="Şifre" required>
-                <button type="submit">Giriş Yap</button>
-            </form>
-        </div>
-        <div id="kayit" class="form-content">
-            <h2>Üye Ol</h2>
-            <form action="giris.html">
-                <input type="text" placeholder="Kullanıcı Adı" required>
-                <input type="email" placeholder="E-posta Adresi" required>
-                <input type="password" placeholder="Şifre" required>
-                <input type="password" placeholder="Şifre Tekrar" required>
-                <button type="submit">Kayıt Ol</button>
-            </form>
-        </div>
+  <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-icon">H</span> HELLO SCRIPTS</div>
+      <div class="links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="mods.html">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
+        <a href="giris.html" class="btn-giris active">Giriş Yap</a>
+      </div>
     </div>
-    <script>
-        function openTab(tabName) {
-            var i;
-            var x = document.getElementsByClassName("form-content");
-            for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
-            var btn = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < btn.length; i++) { btn[i].classList.remove("active"); }
-            document.getElementById(tabName).classList.add("active");
-            event.currentTarget.classList.add("active");
-        }
-    </script>
+  </header>
+  <main class="container">
+    <div class="login-box">
+      <h2>Giriş Yap</h2>
+      <p style="color:var(--muted); font-size:14px; margin-bottom:30px;">Hesabınıza giriş yapın</p>
+      <form>
+        <input type="text" placeholder="Kullanıcı Adı">
+        <input type="password" placeholder="Şifre">
+        <button type="button">Giriş Yap</button>
+      </form>
+    </div>
+  </main>
+  <footer>© 2026 Hello Scripts. Tüm hakları saklıdır.</footer>
 </body>
 </html>
