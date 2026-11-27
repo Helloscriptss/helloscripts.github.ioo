@@ -54,9 +54,10 @@
       else document.querySelectorAll('.auth-tab')[1].classList.add('active');
     }
 
-    // GİRİŞ YAPINCA URL'E GİZLİ BİR KOD EKLİYORUZ VE ANA SAYFAYA GÖNDERİYORUZ
+    // GİRİŞ FONKSİYONU
     function loginUser() {
-      window.location.href = 'index.html?giris=1'; 
+      localStorage.setItem('isLoggedIn', 'true'); 
+      window.location.href = 'index.html'; 
     }
   </script>
 </body>
