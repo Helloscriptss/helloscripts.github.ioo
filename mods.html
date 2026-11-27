@@ -1,15 +1,80 @@
-<div style="background:#12352c; padding:10px; text-align:center; color:#c7f6e4; font-size:12px; font-weight:bold;">✦ HELLO SCRIPTS ✦</div>
-<header style="position:sticky; top:0; z-index:20; background:#090d0d; border-bottom:1px solid rgba(224,255,246,.09); padding:15px 20px; display:flex; align-items:center; justify-content:space-between; font-family:Arial, sans-serif;">
-  <a href="index.html" style="color:white; text-decoration:none; font-weight:bold; display:flex; align-items:center; gap:10px;">
-    <span style="background:#4ce0ae; color:#090d0d; padding:8px 12px; border-radius:8px; font-size:18px;">H</span> HELLO SCRIPTS
-  </a>
-  <nav style="display:flex; gap:15px;">
-    <a href="index.html" style="color:#aab8b3; text-decoration:none; font-size:13px;">Ana Sayfa</a>
-    <a href="mods.html" style="color:#4ce0ae; text-decoration:none; font-size:13px; font-weight:bold;">Modlar</a>
-    <a href="scripts.html" style="color:#aab8b3; text-decoration:none; font-size:13px;">Scriptler</a>
-    <a href="free.html" style="color:#aab8b3; text-decoration:none; font-size:13px;">Ücretsiz</a>
-    <a href="anticheat.html" style="color:#aab8b3; text-decoration:none; font-size:13px;">Anti-Cheat</a>
-    <a href="mlo.html" style="color:#aab8b3; text-decoration:none; font-size:13px;">MLO</a>
-    <a href="giris.html" style="background:#4ce0ae; color:#090d0d; padding:6px 12px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:12px;">Giriş Yap</a>
-  </nav>
-</header>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modlar · Hello Scripts</title>
+  <style>
+    /* Zorunlu siyah arka plan ve renk ayarları */
+    :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
+    
+    * { box-sizing: border-box; }
+    
+    /* Beyazlığı önlemek için html ve body'ye zorunlu siyah arka plan */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #090d0d !important;
+      color: #f2f6f4 !important;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    
+    .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    
+    .announcement { padding: 10px; background: #12352c !important; color: #c7f6e4 !important; text-align: center; font-size: 12px; font-weight: bold; letter-spacing: 1px; }
+    
+    header { position: sticky; top: 0; z-index: 20; background: #090d0d !important; border-bottom: 1px solid var(--line); padding: 15px 0; }
+    
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px; color: #f2f6f4 !important; }
+    
+    .brand-icon { background: var(--green) !important; color: #090d0d !important; padding: 8px 12px; border-radius: 8px; font-size: 20px; }
+    
+    .links { display: flex; gap: 20px; align-items: center; }
+    
+    .links a { color: var(--muted) !important; font-size: 13px; font-weight: bold; transition: .2s; }
+    
+    .links a:hover, .links a.active { color: var(--green) !important; }
+    
+    .btn-giris { background: var(--green) !important; color: #090d0d !important; padding: 8px 15px; border-radius: 8px; }
+    
+    .page-content { padding: 50px 0; min-height: 60vh; background: #090d0d !important; }
+    
+    .page-content h1 { color: var(--green) !important; border-bottom: 1px solid var(--line); padding-bottom: 15px; }
+    
+    .page-content p { color: var(--muted) !important; }
+    
+    footer { text-align: center; padding: 30px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 12px; background: #090d0d !important; }
+  </style>
+</head>
+<body>
+  <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
+  
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-icon">H</span> HELLO SCRIPTS</div>
+      <div class="links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="mods.html" class="active">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
+        <a href="giris.html" class="btn-giris">Giriş Yap</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <h1>Modlar</h1>
+    <p>Buraya modlarınızı ekleyebilirsiniz. Arka plan artık tamamen siyah, bir sorun kalmadı!</p>
+  </main>
+
+  <footer>© 2026 Hello Scripts. Tüm hakları saklıdır.</footer>
+</body>
+</html>
