@@ -56,9 +56,10 @@
       else document.querySelectorAll('.auth-tab')[1].classList.add('active');
     }
 
-    // GİRİŞ FONKSİYONU: Linkin sonuna ?giris=basarili ekleyerek ana sayfaya atar
+    // GİRİŞ YAPINCA ÇEREZ KAYDEDİLİR
     function loginUser() {
-      window.location.href = 'index.html?giris=basarili'; 
+      document.cookie = "girisYapildi=true; path=/"; 
+      window.location.href = 'index.html'; 
     }
   </script>
 </body>
