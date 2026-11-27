@@ -15,79 +15,15 @@
             min-height: 100vh; 
             margin: 0;
         }
-
-        h1 { 
-            color: #c77dff; 
-            font-size: 3em; 
-            text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); 
-            text-transform: uppercase; 
-            margin-top: 50px;
-            margin-bottom: 40px;
-        }
-
-        /* RPF Kartlarını Yan Yana Dizmek İçin */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .rpf-kart {
-            background-color: #151515;
-            border: 1px solid #333;
-            border-radius: 10px;
-            width: 300px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .rpf-kart:hover {
-            border-color: #9d4edd;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3);
-        }
-
+        h1 { color: #c77dff; font-size: 3em; text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); text-transform: uppercase; margin-top: 50px; margin-bottom: 40px; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .rpf-kart { background-color: #151515; border: 1px solid #333; border-radius: 10px; width: 300px; padding: 20px; transition: all 0.3s ease; text-align: left; display: flex; flex-direction: column; }
+        .rpf-kart:hover { border-color: #9d4edd; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3); }
         .rpf-kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
         .rpf-kart p { color: #888; font-size: 0.9em; line-height: 1.5; flex-grow: 1; }
-
-        /* İndirme Butonu */
-        .indir-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: transparent;
-            color: #c77dff;
-            border: 2px solid #9d4edd;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            cursor: pointer;
-        }
+        .indir-btn { display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: transparent; color: #c77dff; border: 2px solid #9d4edd; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; width: 100%; box-sizing: border-box; text-align: center; cursor: pointer; }
         .indir-btn:hover { background-color: #9d4edd; color: #fff; }
-
-        /* Geri Dön Butonu */
-        .geri-btn {
-            display: inline-block;
-            margin-top: 50px;
-            padding: 10px 30px;
-            color: #c77dff;
-            border: 2px solid #9d4edd;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: 0.3s;
-        }
+        .geri-btn { display: inline-block; margin-top: 50px; padding: 10px 30px; color: #c77dff; border: 2px solid #9d4edd; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: 0.3s; }
         .geri-btn:hover { background-color: #9d4edd; color: #fff; }
     </style>
 </head>
@@ -96,25 +32,24 @@
     <h1>Mods & RPF Dosyaları</h1>
 
     <div class="container">
-        <!-- RPF Dosyası 1 -->
+        <!-- 1. KUTU: SKIN -->
         <div class="rpf-kart">
-            <h3>Araç Modu Paketi</h3>
-            <p>Sunucunuz için özel hazırlanmış, yüksek kaliteli araç modelleri ve RPF dosyaları.</p>
-            <!-- href kısmına kendi indirme linkini yapıştır -->
+            <h3>Skin</h3>
+            <p>Sunucunuzda oyunculara özel silah skinleri, karakter kıyafetleri ve görünüm paketleri.</p>
             <a href="https://discord.gg/jetKFrMHg" target="_blank" class="indir-btn">İndir / İncele</a>
         </div>
 
-        <!-- RPF Dosyası 2 -->
+        <!-- 2. KUTU: MODS -->
         <div class="rpf-kart">
-            <h3>Harita Eklentisi</h3>
-            <p>Yeni mekanlar, gizli bölgeler ve sunucunuza derinlik katacak özel harita dosyaları.</p>
+            <h3>Mods</h3>
+            <p>Oyun içi araç modelleri, harita eklentileri ve oyun deneyimini geliştiren özel modlar.</p>
             <a href="https://discord.gg/jetKFrMHg" target="_blank" class="indir-btn">İndir / İncele</a>
         </div>
 
-        <!-- RPF Dosyası 3 -->
+        <!-- 3. KUTU: SOUND -->
         <div class="rpf-kart">
-            <h3>Silah & Eşya Modu</h3>
-            <p>Özel animasyonlara sahip silahlar, eşyalar ve karakter özelleştirme RPF dosyaları.</p>
+            <h3>Sound</h3>
+            <p>Özel araç sesleri, silah sesleri, ortam müzikleri ve oyuna derinlik katan ses paketleri.</p>
             <a href="https://discord.gg/jetKFrMHg" target="_blank" class="indir-btn">İndir / İncele</a>
         </div>
     </div>
