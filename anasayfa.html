@@ -6,16 +6,24 @@
     <title>Hello Development | FiveM</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0a0a; color: #ffffff; margin: 0; padding: 0; text-align: center; min-height: 100vh; display: flex; flex-direction: column; }
-        .hero-section { background-image: url('arkaplan.jpg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 85vh; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 80px; position: relative; border-bottom: 2px solid #9d4edd; }
+        .hero-section { background-image: url('arkaplan.jpg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 60vh; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 40px; position: relative; border-bottom: 2px solid #9d4edd; }
         .hero-overlay { padding: 20px; }
         .hero-overlay p { color: #c77dff; font-size: 1.5em; margin: 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); font-weight: bold; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 20px; padding: 40px 20px; max-width: 1400px; margin: 0 auto; }
+        .kategori-baslik { color: #c77dff; font-size: 2.2em; text-transform: uppercase; letter-spacing: 3px; margin-top: 40px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(157, 78, 221, 0.5); border-bottom: 1px solid #333; display: inline-block; padding-bottom: 10px; }
+        .ozel-sekme-alani { padding: 20px; display: flex; justify-content: center; }
+        .ozel-kart { background-color: #151515; border: 2px solid #9d4edd; border-radius: 10px; width: 600px; padding: 30px; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; box-shadow: 0 0 20px rgba(157, 78, 221, 0.2); }
+        .ozel-kart:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4); }
+        .ozel-kart h3 { color: #c77dff; margin-top: 0; font-size: 2em; text-transform: uppercase; letter-spacing: 2px;}
+        .ozel-kart p { color: #aaa; font-size: 1.1em; margin-bottom: 20px; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 20px; padding: 20px; max-width: 1400px; margin: 0 auto; }
         .kart { background-color: #151515; border: 1px solid #333; border-radius: 10px; width: 280px; padding: 20px; transition: all 0.3s ease; text-align: left; position: relative; overflow: hidden; display: flex; flex-direction: column; }
         .kart:hover { border-color: #9d4edd; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3); }
         .kart h3 { color: #fff; margin-top: 0; font-size: 1.5em; }
         .kart p { color: #888; font-size: 0.9em; line-height: 1.5; flex-grow: 1; }
         .indir-btn { display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: transparent; color: #c77dff; border: 2px solid #9d4edd; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; width: 100%; box-sizing: border-box; text-align: center; cursor: pointer; }
         .indir-btn:hover { background-color: #9d4edd; color: #fff; }
+        .ozel-btn { display: inline-block; padding: 12px 30px; background-color: #9d4edd; color: #fff; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: 0.3s; cursor: pointer; }
+        .ozel-btn:hover { background-color: #c77dff; box-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
         .discord-alani { margin-top: auto; padding: 40px 20px; background-color: #151515; border-top: 2px solid #9d4edd; }
         .discord-btn { display: inline-block; padding: 15px 40px; background-color: #5865F2; color: white; text-decoration: none; font-size: 1.2em; font-weight: bold; border-radius: 50px; transition: 0.3s; }
         .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); }
@@ -30,6 +38,16 @@
         </div>
     </div>
 
+    <h2 class="kategori-baslik">Özel Dosyalar</h2>
+    <div class="ozel-sekme-alani">
+        <div class="ozel-kart">
+            <h3>Mods & RPF Dosyaları</h3>
+            <p>Araç modelleri, harita eklentileri, özel silahlar ve tüm RPF dosyaları burada!</p>
+            <a href="mods.html" class="ozel-btn">Modları İncele</a>
+        </div>
+    </div>
+
+    <h2 class="kategori-baslik">FiveM Hizmetleri</h2>
     <div class="container">
         <div class="kart">
             <h3>MLO</h3>
