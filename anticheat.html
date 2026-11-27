@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sayfa · Hello Scripts</title>
   
+  <!-- KİLİT KODU: Giriş yapılmadıysa girişe atar -->
   <script>
-    // GİRİŞ KONTROLÜ
     if(localStorage.getItem('isLoggedIn') !== 'true') {
       window.location.href = 'giris.html';
     }
@@ -52,19 +52,18 @@
       <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
         <a href="index.html">Ana Sayfa</a>
-        <a class="active" href="mods.html">Modlar</a>
+        <a href="mods.html">Modlar</a>
         <a href="scripts.html">Scriptler</a>
         <a href="free.html">Ücretsiz</a>
         <a href="anticheat.html">Anti-Cheat</a>
         <a href="mlo.html">MLO</a>
       </nav>
-      <!-- ÇIKIŞ YAP (Hafızayı temizler) -->
+      <!-- ÇIKIŞ BUTONU (Hafızayı temizler) -->
       <div><a class="nav-cta" href="giris.html" onclick="localStorage.removeItem('isLoggedIn');">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
   <main class="container page-content">
-    <!-- BURAYA İÇERİKLERİNİ EKLE -->
     <h1>Sayfa Başlığı</h1>
     <p>Burası senin içeriklerini ekleyeceğin alan. Artık hesaptan atmayacak.</p>
   </main>
