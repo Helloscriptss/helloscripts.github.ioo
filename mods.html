@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sayfa · Hello Scripts</title>
   
-  <!-- KİLİT KODU: Linkte ?giris=basarili yoksa girişe at -->
+  <!-- KİLİT KODU: Çerez yoksa anında girişe atar -->
   <script>
-    if (window.location.search.indexOf('giris=basarili') === -1) {
+    if (document.cookie.indexOf('girisYapildi=true') === -1) {
       window.location.href = 'giris.html';
     }
   </script>
@@ -15,8 +15,7 @@
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
     *{box-sizing:border-box} 
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;display:none;} /* Giriş yapılmadan gizli kalır */
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;display:none;} 
     a{color:inherit;text-decoration:none}
     
     .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
@@ -46,7 +45,6 @@
 </head>
 <body>
 
-  <!-- GİRİŞ KONTROLÜ GEÇTİYSE GÖSTER -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.body.style.display = "block";
@@ -57,21 +55,21 @@
   
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html?giris=basarili"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+      <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
-        <a href="index.html?giris=basarili">Ana Sayfa</a>
-        <a href="mods.html?giris=basarili">Modlar</a>
-        <a href="scripts.html?giris=basarili">Scriptler</a>
-        <a href="free.html?giris=basarili">Ücretsiz</a>
-        <a href="anticheat.html?giris=basarili">Anti-Cheat</a>
-        <a href="mlo.html?giris=basarili">MLO</a>
+        <a href="index.html">Ana Sayfa</a>
+        <a class="active" href="mods.html">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
       </nav>
-      <div><a class="nav-cta" href="giris.html">Çıkış Yap ↗</a></div>
+      <!-- ÇIKIŞ YAP BUTONU (Çıkış yapınca çerezi siliyor) -->
+      <div><a class="nav-cta" href="giris.html" onclick="document.cookie='girisYapildi=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
   <main class="container page-content">
-    <!-- BURAYA İÇERİĞİNİ EKLEYEBİLİRSİN (Modları, Scriptleri vs.) -->
     <h1>Sayfa Başlığı</h1>
     <p>Burası senin mod, script veya ücretsiz içeriklerini ekleyeceğin alan. Menüdeki bağlantılar artık seni girişten atmaz.</p>
   </main>
@@ -80,14 +78,14 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="index.html?giris=basarili"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+          <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
           <p>FiveM ve rol yapma meraklıları için bir topluluk alanı.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasyon</h4>
-          <a href="index.html?giris=basarili">Ana Sayfa</a>
-          <a href="mods.html?giris=basarili">Modlar</a>
-          <a href="scripts.html?giris=basarili">Scriptler</a>
+          <a href="index.html">Ana Sayfa</a>
+          <a href="mods.html">Modlar</a>
+          <a href="scripts.html">Scriptler</a>
         </div>
         <div class="footer-column">
           <h4>Bilgi</h4>
@@ -95,10 +93,4 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Hello Scripts. Tüm hakları saklıdır.</span>
-        <span>Hizmet Şartları | Gizlilik Politikası</span>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+        <span>© 2026 Hello Scripts
