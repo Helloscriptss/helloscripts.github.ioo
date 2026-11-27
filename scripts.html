@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sayfa · Hello Scripts</title>
-  
-  <!-- KİLİT KODU: Giriş yapılmadıysa girişe atar -->
+  <title>Scriptler · Hello Scripts</title>
   <script>
     if(localStorage.getItem('isLoggedIn') !== 'true') {
       window.location.href = 'giris.html';
     }
   </script>
-
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
     *{box-sizing:border-box} 
     body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;}
     a{color:inherit;text-decoration:none}
-    
     .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
     .announcement{min-height:36px;display:flex;align-items:center;justify-content:center;background:#12352c;color:#c7f6e4;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
     .site-header{position:sticky;top:0;z-index:20;background:rgba(8,13,13,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
@@ -28,44 +24,39 @@
     .nav-links a{color:#aab8b3;font-size:12px;font-weight:700;padding:10px 13px;border-radius:9px;transition:.2s}
     .nav-links a:hover,.nav-links a.active{background:rgba(76,224,174,.1);color:var(--green)}
     .nav-cta{background:#ff4d4d;color:white;padding:11px 16px;border-radius:10px;font-size:12px;font-weight:800}
-    
     .page-content { min-height: 60vh; padding: 80px 0; }
     .page-content h1 { color: var(--green); border-bottom: 1px solid var(--line); padding-bottom: 15px; margin-bottom: 30px; }
     .page-content p { color: var(--muted); font-size: 15px; }
-    
     footer{background:#080c0b;border-top:1px solid var(--line);padding:50px 0 20px}
     .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
     .footer-brand p{color:var(--muted);font-size:12px;margin-top:15px;max-width:300px}
     .footer-column h4{font-size:12px;margin-bottom:15px;color:var(--green);text-transform:uppercase}
     .footer-column a{display:block;color:var(--muted);font-size:12px;margin-bottom:10px}
     .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
-    
     @media(max-width:768px){.nav-links{display:none}.footer-main{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
   <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
-  
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="mods.html">Modlar</a>
-        <a href="scripts.html">Scriptler</a>
+        <!-- BURASI AKTİF (Scriptler sayfasındayız) -->
+        <a class="active" href="scripts.html">Scriptler</a>
         <a href="free.html">Ücretsiz</a>
         <a href="anticheat.html">Anti-Cheat</a>
         <a href="mlo.html">MLO</a>
       </nav>
-      <!-- ÇIKIŞ BUTONU (Hafızayı temizler) -->
       <div><a class="nav-cta" href="giris.html" onclick="localStorage.removeItem('isLoggedIn');">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
   <main class="container page-content">
-    <h1>Sayfa Başlığı</h1>
-    <p>Burası senin içeriklerini ekleyeceğin alan. Artık hesaptan atmayacak.</p>
+    <h1>Scriptler</h1>
+    <p>Burası senin script içeriklerini ekleyeceğin alan.</p>
   </main>
 
   <footer>
