@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sayfa · Hello Scripts</title>
   
-  <!-- KİLİT KODU: Linkte ?giris=1 yoksa girişe atar -->
   <script>
-    if (window.location.search.indexOf('giris=1') === -1) {
+    // GİRİŞ KONTROLÜ
+    if(localStorage.getItem('isLoggedIn') !== 'true') {
       window.location.href = 'giris.html';
     }
   </script>
@@ -15,7 +15,7 @@
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
     *{box-sizing:border-box} 
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;} 
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;}
     a{color:inherit;text-decoration:none}
     
     .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
@@ -49,40 +49,42 @@
   
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html?giris=1"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+      <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
-        <a href="index.html?giris=1">Ana Sayfa</a>
-        <a class="active" href="mods.html?giris=1">Modlar</a>
-        <a href="scripts.html?giris=1">Scriptler</a>
-        <a href="free.html?giris=1">Ücretsiz</a>
-        <a href="anticheat.html?giris=1">Anti-Cheat</a>
-        <a href="mlo.html?giris=1">MLO</a>
+        <a href="index.html">Ana Sayfa</a>
+        <a class="active" href="mods.html">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
       </nav>
-      <div><a class="nav-cta" href="giris.html">Çıkış Yap ↗</a></div>
+      <!-- ÇIKIŞ YAP (Hafızayı temizler) -->
+      <div><a class="nav-cta" href="giris.html" onclick="localStorage.removeItem('isLoggedIn');">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
   <main class="container page-content">
+    <!-- BURAYA İÇERİKLERİNİ EKLE -->
     <h1>Sayfa Başlığı</h1>
-    <p>Burası senin mod, script veya ücretsiz içeriklerini ekleyeceğin alan. Menüdeki bağlantılar artık seni girişten atmaz.</p>
+    <p>Burası senin içeriklerini ekleyeceğin alan. Artık hesaptan atmayacak.</p>
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="index.html?giris=1"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+          <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
           <p>FiveM ve rol yapma meraklıları için bir topluluk alanı.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasyon</h4>
-          <a href="index.html?giris=1">Ana Sayfa</a>
-          <a href="mods.html?giris=1">Modlar</a>
-          <a href="scripts.html?giris=1">Scriptler</a>
+          <a href="index.html">Ana Sayfa</a>
+          <a href="mods.html">Modlar</a>
+          <a href="scripts.html">Scriptler</a>
         </div>
         <div class="footer-column">
           <h4>Bilgi</h4>
-          <a href="giris.html">Çıkış Yap</a>
+          <a href="giris.html" onclick="localStorage.removeItem('isLoggedIn');">Çıkış Yap</a>
         </div>
       </div>
       <div class="footer-bottom">
