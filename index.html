@@ -5,21 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HELLO SCRIPTS · Community</title>
   
-  <!-- GİRİŞ KONTROLÜ -->
-  <script>
-    // Sayfa yüklenmeden önce kontrol et
-    window.onload = function() {
-      if(localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = 'giris.html';
-      } else {
-        // Giriş yapılmışsa sayfayı göster
-        document.body.style.display = 'block';
-      }
-    };
-  </script>
-  
   <style>
-    /* Sayfa giriş kontrolü yapılana kadar gizli kalsın (siyah ekran) */
+    /* Sayfa yüklenirken önce siyah ekran görünür, kontrol yapılır sonra içerik gelir */
     body { display: none; background-color: #090d0d; color: #f2f6f4; font-family: Arial, sans-serif; }
     
     :root{color-scheme:dark;--bg:#090d0d;--surface:#101717;--text:#f2f6f4;--muted:#9baaa6;--line:rgba(224,255,246,.09);--green:#4ce0ae;--max:1180px;--radius:17px}
@@ -93,6 +80,18 @@
   </style>
 </head>
 <body>
+
+  <!-- SADECE GİRİŞ YAPANLAR GÖREBİLİR (KİLİT KODU) -->
+  <script>
+    setTimeout(function() {
+      if(localStorage.getItem('isLoggedIn') === 'true') {
+        document.body.style.display = 'block';
+      } else {
+        window.location.href = 'giris.html';
+      }
+    }, 100); // 100 milisaniye bekle (tarayıcının okuması için)
+  </script>
+
   <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
   <header class="site-header">
     <div class="container nav">
@@ -105,7 +104,7 @@
         <a href="anticheat.html">Anti-Cheat</a>
         <a href="mlo.html">MLO</a>
       </nav>
-      <div><a class="nav-cta" href="giris.html">Giriş Yap ↗</a></div>
+      <div><a class="nav-cta" href="giris.html">Çıkış Yap / Giriş ↗</a></div>
     </div>
   </header>
 
@@ -244,7 +243,7 @@
         <div><h3 style="margin:0 0 5px">Hello Scripts ile bağlantıda kalın.</h3><p style="margin:0;color:var(--muted);font-size:13px">Topluluğu takip edin ve haberleri yakalayın.</p></div>
         <div class="social-links">
           <a href="https://discord.gg/jetKFrMHg" target="_blank">Discord ↗</a>
-          <a href="giris.html">Giriş Yap ↗</a>
+          <a href="giris.html">Çıkış Yap ↗</a>
         </div>
       </div>
     </div>
