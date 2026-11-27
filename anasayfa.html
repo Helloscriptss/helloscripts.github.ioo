@@ -29,10 +29,16 @@
         .ozel-btn { display: inline-block; padding: 12px 30px; background-color: #9d4edd; color: #fff; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: 0.3s; cursor: pointer; }
         .ozel-btn:hover { background-color: #c77dff; box-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
 
-        .discord-alani { margin-top: auto; padding: 40px 20px; background-color: #151515; border-top: 2px solid #9d4edd; }
+        /* DESTEK BÖLÜMÜ TASARIMI */
+        .destek-alani { margin-top: auto; padding: 60px 20px; background-color: #0f0f13; border-top: 2px solid #9d4edd; }
+        .destek-kutu { background-color: #151515; border: 1px solid #333; border-radius: 10px; max-width: 600px; margin: 0 auto; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .destek-kutu h2 { color: #c77dff; font-size: 2em; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;}
+        .destek-kutu p { color: #aaa; font-size: 1.1em; margin-bottom: 30px; line-height: 1.6; }
+        
         .discord-btn { display: inline-block; padding: 15px 40px; background-color: #5865F2; color: white; text-decoration: none; font-size: 1.2em; font-weight: bold; border-radius: 50px; transition: 0.3s; }
-        .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); }
-        .yetkili-ekip-alt { margin-top: 30px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.9em; color: #888; line-height: 1.8; }
+        .discord-btn:hover { background-color: #4752c4; transform: scale(1.05); box-shadow: 0 0 20px rgba(88, 101, 242, 0.5); }
+
+        .yetkili-ekip-alt { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.9em; color: #888; line-height: 1.8; }
         .yetkili-ekip-alt span { color: #c77dff; font-weight: bold; }
     </style>
 </head>
@@ -84,14 +90,21 @@
         </div>
     </div>
 
-    <!-- Discord ve Yetkili Ekip -->
-    <div class="discord-alani">
-        <h2 style="color: #fff; margin-bottom: 20px;">Desteğe mi İhtiyacın Var?</h2>
-        <a href="https://discord.gg/jetKFrMHg" class="discord-btn" target="_blank">Discord Sunucumuza Katıl</a>
-        <div class="yetkili-ekip-alt">
-            Yetkili Ekip:<br>
-            <span>TürbanlıBatu</span><br>
-            <span>TürbanlıMesut</span>
+    <!-- DESTEK / YARDIM ALANI -->
+    <div class="destek-alani">
+        <div class="destek-kutu">
+            <h2>Destek Merkezi</h2>
+            <p>Herhangi bir sorunuz, öneriniz veya satın alım işleminiz için buradayız. Bize ulaşmak için Discord sunucumuza katılın.</p>
+            
+            <a href="https://discord.gg/jetKFrMHg" class="discord-btn" target="_blank">
+                <i class="fab fa-discord"></i> Discord'da Bize Ulaş
+            </a>
+            
+            <div class="yetkili-ekip-alt">
+                Yetkili Ekip:<br>
+                <span>TürbanlıBatu</span><br>
+                <span>TürbanlıMesut</span>
+            </div>
         </div>
     </div>
 
