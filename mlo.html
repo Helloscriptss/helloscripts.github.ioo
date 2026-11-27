@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scriptler · Hello Scripts</title>
+  <title>Sayfa · Hello Scripts</title>
+  
+  <!-- KİLİT KODU: Giriş yapılmadıysa girişe atar -->
   <script>
     if(localStorage.getItem('isLoggedIn') !== 'true') {
       window.location.href = 'giris.html';
     }
   </script>
+
   <style>
     :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
     *{box-sizing:border-box} 
@@ -37,26 +40,40 @@
   </style>
 </head>
 <body>
+
   <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
+  
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="mods.html">Modlar</a>
-        <!-- BURASI AKTİF (Scriptler sayfasındayız) -->
-        <a class="active" href="scripts.html">Scriptler</a>
-        <a href="free.html">Ücretsiz</a>
-        <a href="anticheat.html">Anti-Cheat</a>
-        <a href="mlo.html">MLO</a>
+        <a href="scripts.html">Scriptler</a>
+        <!-- BURASI BÜYÜLÜ: Hangi sayfadaysa onun adını aktif eder -->
+        <a id="page-free" href="free.html">Ücretsiz</a>
+        <a id="page-anticheat" href="anticheat.html">Anti-Cheat</a>
+        <a id="page-mlo" href="mlo.html">MLO</a>
       </nav>
       <div><a class="nav-cta" href="giris.html" onclick="localStorage.removeItem('isLoggedIn');">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
+  <script>
+    // Sayfa yüklendiğinde, hangi sayfadaysak onun menüsünü aktif yap
+    document.addEventListener("DOMContentLoaded", function() {
+      var path = window.location.pathname;
+      var page = path.split("/").pop(); 
+      if(page === 'free.html') document.getElementById('page-free').classList.add('active');
+      if(page === 'anticheat.html') document.getElementById('page-anticheat').classList.add('active');
+      if(page === 'mlo.html') document.getElementById('page-mlo').classList.add('active');
+    });
+  </script>
+
   <main class="container page-content">
-    <h1>Scriptler</h1>
-    <p>Burası senin script içeriklerini ekleyeceğin alan.</p>
+    <!-- BURAYA KENDİ İÇERİĞİNİ EKLE -->
+    <h1>Sayfa Başlığı</h1>
+    <p>Burası senin içeriklerini ekleyeceğin alan. Artık hesaptan atmayacak.</p>
   </main>
 
   <footer>
