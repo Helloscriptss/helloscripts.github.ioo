@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HELLO SCRIPTS · Community</title>
   
+  <!-- KİLİT KODU: Çerez yoksa anında girişe atar -->
   <script>
-    // KİLİT KODU: Linkte ?giris=basarili yazmıyorsa, giriş sayfasına at.
-    if (window.location.search.indexOf('giris=basarili') === -1) {
+    if (document.cookie.indexOf('girisYapildi=true') === -1) {
       window.location.href = 'giris.html';
     }
   </script>
@@ -25,7 +25,7 @@
     .nav-links{display:flex;gap:15px}
     .nav-links a{color:#aab8b3;font-size:12px;font-weight:700;padding:10px 13px;border-radius:9px}
     .nav-links a:hover,.nav-links a.active{background:rgba(76,224,174,.1);color:var(--green)}
-    .nav-cta{background:var(--green);color:#04120c;padding:11px 16px;border-radius:10px;font-size:12px;font-weight:800}
+    .nav-cta{background:#ff4d4d;color:white;padding:11px 16px;border-radius:10px;font-size:12px;font-weight:800}
     .hero{padding:100px 0;text-align:center;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at center, #15221e 0%, #090d0d 100%)}
     .hero h1{font-size:50px;margin-bottom:20px;line-height:1.1}
     .hero span{color:var(--green)}
@@ -89,17 +89,17 @@
   <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html?giris=basarili"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+      <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
       <nav class="nav-links">
-        <a class="active" href="index.html?giris=basarili">Ana Sayfa</a>
-        <a href="mods.html?giris=basarili">Modlar</a>
-        <a href="scripts.html?giris=basarili">Scriptler</a>
-        <a href="free.html?giris=basarili">Ücretsiz</a>
-        <a href="anticheat.html?giris=basarili">Anti-Cheat</a>
-        <a href="mlo.html?giris=basarili">MLO</a>
+        <a class="active" href="index.html">Ana Sayfa</a>
+        <a href="mods.html">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
       </nav>
-      <!-- BURASI ARTIK ÇIKIŞ YAP OLARAK DEĞİŞTİRİLDİ -->
-      <div><a class="nav-cta" href="giris.html" style="background:#ff4d4d;color:white;">Çıkış Yap ↗</a></div>
+      <!-- ÇIKIŞ YAP BUTONU (Çıkış yapınca çerezi siliyor) -->
+      <div><a class="nav-cta" href="giris.html" onclick="document.cookie='girisYapildi=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'">Çıkış Yap ↗</a></div>
     </div>
   </header>
 
@@ -108,7 +108,7 @@
       <div class="container">
         <h1>Hoş Geldin<br><span>Hello Scripts.</span></h1>
         <p>Yaratıcılık, kalite ve daha iyi bir FiveM deneyimi odaklı bir topluluk. Çalışmalarımızı keşfedin, güncellemeleri takip edin ve topluluktan yardım alın.</p>
-        <a href="scripts.html?giris=basarili" class="btn">Scriptleri Keşfet →</a>
+        <a href="scripts.html" class="btn">Scriptleri Keşfet →</a>
         <a href="#about" class="btn" style="background:transparent;border:1px solid var(--line);color:white">Daha Fazla Bilgi</a>
       </div>
     </section>
@@ -124,13 +124,13 @@
             <div class="card-icon">✧</div>
             <h3>Projelerimiz</h3>
             <p>Yaratıcı çalışmalarımıza göz atın ve projeleri takip edin.</p>
-            <a class="text-link" href="mods.html?giris=basarili">Modları Gör →</a>
+            <a class="text-link" href="mods.html">Modları Gör →</a>
           </article>
           <article class="community-card">
             <div class="card-icon">◈</div>
             <h3>Güncellemeler</h3>
             <p>Duyuruları ve önemli haberleri takip edin.</p>
-            <a class="text-link" href="scripts.html?giris=basarili">Scriptleri Gör →</a>
+            <a class="text-link" href="scripts.html">Scriptleri Gör →</a>
           </article>
           <article class="community-card">
             <div class="card-icon">◎</div>
@@ -182,10 +182,10 @@
         </div>
         <div class="support-grid">
           <article class="support-card">
-            <div><h3>Rehberler & Bilgiler</h3><p>Faydalı makaleler, kurulum notları ve topluluk sorularının yanıtları.</p><a class="text-link" href="free.html?giris=basarili">Ücretsiz Ürünleri Gör →</a></div>
+            <div><h3>Rehberler & Bilgiler</h3><p>Faydalı makaleler, kurulum notları ve topluluk sorularının yanıtları.</p><a class="text-link" href="free.html">Ücretsiz Ürünleri Gör →</a></div>
           </article>
           <article class="support-card">
-            <div><h3>Haberler & Duyurular</h3><p>Topluluk duyuruları ve proje haberleri.</p><a class="text-link" href="scripts.html?giris=basarili">Scriptleri Keşfet →</a></div>
+            <div><h3>Haberler & Duyurular</h3><p>Topluluk duyuruları ve proje haberleri.</p><a class="text-link" href="scripts.html">Scriptleri Keşfet →</a></div>
           </article>
         </div>
       </div>
@@ -248,15 +248,15 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="index.html?giris=basarili"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
+          <a class="brand" href="index.html"><span class="brand-mark">H</span> HELLO SCRIPTS</a>
           <p>FiveM ve rol yapma meraklıları için bir topluluk alanı. Haberler, bilgiler ve destek.</p>
         </div>
         <div class="footer-column">
           <h4>Navigasyon</h4>
-          <a href="index.html?giris=basarili">Ana Sayfa</a>
-          <a href="mods.html?giris=basarili">Modlar</a>
-          <a href="scripts.html?giris=basarili">Scriptler</a>
-          <a href="free.html?giris=basarili">Ücretsiz</a>
+          <a href="index.html">Ana Sayfa</a>
+          <a href="mods.html">Modlar</a>
+          <a href="scripts.html">Scriptler</a>
+          <a href="free.html">Ücretsiz</a>
         </div>
         <div class="footer-column">
           <h4>Bilgi</h4>
