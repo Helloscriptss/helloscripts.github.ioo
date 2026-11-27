@@ -18,7 +18,6 @@
             height: 100vh;
             margin: 0;
         }
-
         .login-box {
             background-color: rgba(21, 21, 21, 0.85); 
             backdrop-filter: blur(8px);
@@ -30,85 +29,24 @@
             position: relative;
             overflow: hidden;
         }
-
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #444;
-        }
-
-        .tab-btn {
-            flex: 1;
-            background: none;
-            border: none;
-            color: #888;
-            padding: 10px;
-            font-size: 1.1em;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .tab-btn.active {
-            color: #c77dff;
-            border-bottom: 2px solid #9d4edd;
-        }
-
+        .tabs { display: flex; margin-bottom: 20px; border-bottom: 1px solid #444; }
+        .tab-btn { flex: 1; background: none; border: none; color: #888; padding: 10px; font-size: 1.1em; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .tab-btn.active { color: #c77dff; border-bottom: 2px solid #9d4edd; }
         .form-content { display: none; }
         .form-content.active { display: block; }
-
-        h2 {
-            color: #c77dff;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.5em;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background-color: rgba(10, 10, 10, 0.8); 
-            border: 1px solid #444;
-            border-radius: 5px;
-            color: white;
-            box-sizing: border-box;
-            outline: none;
-        }
-
+        h2 { color: #c77dff; text-align: center; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.5em; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; background-color: rgba(10, 10, 10, 0.8); border: 1px solid #444; border-radius: 5px; color: white; box-sizing: border-box; outline: none; }
         input:focus { border-color: #9d4edd; }
-
-        button[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #9d4edd;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #c77dff;
-            box-shadow: 0 0 15px rgba(157, 78, 221, 0.6);
-        }
+        button[type="submit"] { width: 100%; padding: 12px; background-color: #9d4edd; border: none; border-radius: 5px; color: white; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        button[type="submit"]:hover { background-color: #c77dff; box-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
     </style>
 </head>
 <body>
-
     <div class="login-box">
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('giris')">Giriş Yap</button>
             <button class="tab-btn" onclick="openTab('kayit')">Üye Ol</button>
         </div>
-
         <div id="giris" class="form-content active">
             <h2>Giriş Yap</h2>
             <form action="anasayfa.html">
@@ -117,7 +55,6 @@
                 <button type="submit">Giriş Yap</button>
             </form>
         </div>
-
         <div id="kayit" class="form-content">
             <h2>Üye Ol</h2>
             <form action="giris.html">
@@ -129,22 +66,16 @@
             </form>
         </div>
     </div>
-
     <script>
         function openTab(tabName) {
             var i;
             var x = document.getElementsByClassName("form-content");
-            for (i = 0; i < x.length; i++) {
-                x[i].classList.remove("active");
-            }
+            for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
             var btn = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < btn.length; i++) {
-                btn[i].classList.remove("active");
-            }
+            for (i = 0; i < btn.length; i++) { btn[i].classList.remove("active"); }
             document.getElementById(tabName).classList.add("active");
             event.currentTarget.classList.add("active");
         }
     </script>
-
 </body>
 </html>
