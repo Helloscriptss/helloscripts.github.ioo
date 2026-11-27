@@ -1,17 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Free Scripts | Hello Development</title>
-    <style>
-        body { background-color: #0a0a0a; color: white; font-family: 'Segoe UI', Arial, sans-serif; text-align: center; padding: 50px; background-image: radial-gradient(circle at 50% 0%, #2a0a3a 0%, #0a0a0a 60%); min-height: 100vh; margin: 0; }
-        h1 { color: #c77dff; font-size: 3em; text-shadow: 0 0 15px rgba(157, 78, 221, 0.8); text-transform: uppercase; margin-top: 100px; }
-        a { color: #c77dff; text-decoration: none; font-weight: bold; font-size: 1.2em; display: inline-block; margin-top: 50px; padding: 10px 20px; border: 2px solid #9d4edd; border-radius: 5px; transition: 0.3s; }
-        a:hover { background-color: #9d4edd; color: #fff; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ücretsiz · Hello Scripts</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090d0d; --surface:#101717; --text:#f2f6f4; --muted:#9baaa6; --line:rgba(224,255,246,.09); --green:#4ce0ae; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6;} a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+    .announcement{padding:10px;background:#12352c;color:#c7f6e4;text-align:center;font-size:12px;font-weight:bold}
+    header{position:sticky;top:0;z-index:20;background:#090d0d;border-bottom:1px solid var(--line);padding:15px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:18px}
+    .brand-icon{background:var(--green);color:#090d0d;padding:8px 12px;border-radius:8px;font-size:20px}
+    .links{display:flex;gap:20px;align-items:center}
+    .links a{color:var(--muted);font-size:13px;font-weight:bold;transition:.2s}
+    .links a:hover, .links a.active{color:var(--green)}
+    .btn-giris{background:var(--green);color:#090d0d !important;padding:8px 15px;border-radius:8px}
+    .page-content{padding:50px 0; min-height:60vh;}
+    .page-content h1{color:var(--green); border-bottom:1px solid var(--line); padding-bottom:15px;}
+    footer{text-align:center;padding:30px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+  </style>
 </head>
 <body>
-    <h1>Ücretsiz Scriptlerimiz</h1>
-    <a href="anasayfa.html">← Ana Sayfaya Dön</a>
+  <div class="announcement">✦ HELLO SCRIPTS TOPLULUĞUNA HOŞ GELDİNİZ ✦</div>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-icon">H</span> HELLO SCRIPTS</div>
+      <div class="links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="mods.html">Modlar</a>
+        <a href="scripts.html">Scriptler</a>
+        <a href="free.html" class="active">Ücretsiz</a>
+        <a href="anticheat.html">Anti-Cheat</a>
+        <a href="mlo.html">MLO</a>
+        <a href="giris.html" class="btn-giris">Giriş Yap</a>
+      </div>
+    </div>
+  </header>
+  <main class="container page-content">
+    <h1>Ücretsiz Ürünler</h1>
+    <p>Buraya ücretsiz ürünlerinizi ekleyebilirsiniz...</p>
+  </main>
+  <footer>© 2026 Hello Scripts. Tüm hakları saklıdır.</footer>
 </body>
 </html>
